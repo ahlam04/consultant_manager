@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class Entreprise implements Serializable  {
     @Id()
     @GeneratedValue
-    private Integer id_enteprise;
+    private Long id_enteprise;
     @Column(nullable = false)
     private String nom;
     @Column(nullable = true)

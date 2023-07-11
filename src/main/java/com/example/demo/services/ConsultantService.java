@@ -8,6 +8,6 @@ public interface ConsultantService {
 
     Consultant create(Consultant consultant);
     List<Consultant> read();
-    Consultant update (Integer id,Consultant consultant);
-    String delete(Integer id);
+    Consultant update (Long id,Consultant consultant);
+    String delete(Long id);
 }

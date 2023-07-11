@@ -8,7 +8,7 @@ import lombok.Data;
 public class Consultant {
     @Id()
     @GeneratedValue
-    private Integer id_consultant;
+    private Long id_consultant;
     @Column(nullable = false)
     private String nom;
     @Column(nullable = false)

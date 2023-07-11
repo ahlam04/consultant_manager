@@ -21,7 +21,7 @@ public class ConsultantServiceimpl implements ConsultantService {
     }
 
     @Override
-    public Consultant update(Integer id, Consultant consultant) {
+    public Consultant update(Long id, Consultant consultant) {
         return consultantRepository.findById(id)
                 .map( c -> {
                     c.setNom(consultant.getNom());
@@ -36,7 +36,7 @@ public class ConsultantServiceimpl implements ConsultantService {
  }
 
     @Override
-    public String delete(Integer id) {
+    public String delete(Long id) {
 
 
             consultantRepository.deleteById(id);

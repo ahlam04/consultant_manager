@@ -5,23 +5,34 @@ import com.example.demo.entities.Consultant;
 import com.example.demo.entities.Entreprise;
 import com.example.demo.repository.ConsultantRepository;
 import com.example.demo.repository.EntrepriseRepository;
+import com.example.demo.services.EntrepriseService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("Entreprise")
+@RequestMapping("/Entreprise")
+@AllArgsConstructor
 public class EntrepriseController {
 
-    @Autowired
-    private EntrepriseRepository entrepriseRepository;
-
-
-    @GetMapping("/all")
-    private List<Entreprise> entrepriseList(){
-        return entrepriseRepository.findAll();
+    private final EntrepriseService entrepriseService;
+    @PostMapping("/create")
+    public  Entreprise create(@RequestBody Entreprise entreprise){
+        return entrepriseService.create(entreprise);
+    }
+    @GetMapping
+    public List<Entreprise> read(){
+        return entrepriseService.read();
+    }
+    @PutMapping
+    public Entreprise update(@PathVariable Long id,@RequestBody Entreprise entreprise){
+        return entrepriseService.update(id,entreprise);
+    }
+    @DeleteMapping("/delete")
+    public String delete(@PathVariable Long id){
+        return entrepriseService.delete(id);
     }
 }
+
