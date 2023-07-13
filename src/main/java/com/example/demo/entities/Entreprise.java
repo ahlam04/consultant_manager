@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "ENTREPRISE")
@@ -19,7 +20,11 @@ public class Entreprise implements Serializable  {
     private String num;
     @Column(nullable = false)
     private  String adresse;
-    @Column(nullable = false)
-    private  String consultant;
+    /* @Column(nullable = false)
+    private  String consultant;*/
+
+
+
+
 
 }

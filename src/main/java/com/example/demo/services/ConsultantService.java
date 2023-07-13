@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ConsultantService {
 
-    Consultant create(Consultant consultant);
+    Consultant create(Long idEntreprise,Consultant consultant);
     List<Consultant> read();
     Consultant update (Long id,Consultant consultant);
     String delete(Long id);

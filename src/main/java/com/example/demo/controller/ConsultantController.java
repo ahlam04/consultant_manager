@@ -17,9 +17,9 @@ import java.util.List;
 public class ConsultantController {
 
     private final ConsultantService consultantService;
-    @PostMapping("/create")
-    public  Consultant create(@RequestBody Consultant consultant){
-        return consultantService.create(consultant);
+    @PostMapping("/create/{idEntreprise}")
+    public  Consultant create(@PathVariable Long idEntreprise,@RequestBody Consultant consultant){
+        return consultantService.create(idEntreprise,consultant);
     }
     @GetMapping
     public List<Consultant> read(){

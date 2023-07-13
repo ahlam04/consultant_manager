@@ -28,7 +28,7 @@ public class EntrepriseSrviceimpl implements EntrepriseService {
             e.setNom(entreprise.getNom());
             e.setNum(entreprise.getNum());
             e.setAdresse(entreprise.getAdresse());
-            e.setConsultant(entreprise.getConsultant());
+            //e.setConsultant(entreprise.getConsultant());
             return entrepriseRepository.save(e);
         }).orElseThrow(()-> new RuntimeException("Entreprise non trouvée!"));
     }

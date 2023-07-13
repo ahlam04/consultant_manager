@@ -19,5 +19,10 @@ public class Consultant {
     private  String spetialite;
 
 
+    @ManyToOne
+    @JoinColumn(name = "entreprise_id")
+    private Entreprise entreprise;
+
+
 
 }
