@@ -19,10 +19,12 @@ public class EntrepriseController {
 
     private final EntrepriseService entrepriseService;
     @PostMapping("/create")
+    @CrossOrigin(origins = "http://localhost:3000")
     public  Entreprise create(@RequestBody Entreprise entreprise){
         return entrepriseService.create(entreprise);
     }
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Entreprise> read(){
         return entrepriseService.read();
     }

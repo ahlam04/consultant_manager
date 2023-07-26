@@ -17,6 +17,8 @@ public class ConsultantServiceimpl implements ConsultantService {
     private final EntrepriseRepository entrepriseRepository;
     @Override
     public Consultant create(Long idEntreprise,Consultant consultant) {
+        System.out.println("idEntreprise = " + idEntreprise);
+        System.out.println("consultant = " + consultant);
        Optional<Entreprise>  entreprise=entrepriseRepository.findById(idEntreprise);
        if(!entreprise.isPresent()) {
            throw new RuntimeException("entreprise not found");

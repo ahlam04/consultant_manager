@@ -9,14 +9,20 @@ import java.util.List;
 @Entity
 @Table(name = "ENTREPRISE")
 @Data
-
 public class Entreprise implements Serializable  {
-    @Id()
-    @GeneratedValue
+    @Id
+    @SequenceGenerator(
+            name = "consultant_id_sequence",
+            sequenceName = "consultant_id_sequence"
+    )
+    @GeneratedValue(
+            generator = "consultant_id_sequence",
+            strategy = GenerationType.SEQUENCE
+    )
     private Long id_enteprise;
     @Column(nullable = false)
     private String nom;
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String num;
     @Column(nullable = false)
     private  String adresse;

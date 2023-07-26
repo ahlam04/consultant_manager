@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5332/consultant
+    username: ilyas
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    how_sql: true
+  main:
+    web-application-type: servlet

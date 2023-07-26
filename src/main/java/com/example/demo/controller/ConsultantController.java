@@ -18,10 +18,12 @@ public class ConsultantController {
 
     private final ConsultantService consultantService;
     @PostMapping("/create/{idEntreprise}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public  Consultant create(@PathVariable Long idEntreprise,@RequestBody Consultant consultant){
         return consultantService.create(idEntreprise,consultant);
     }
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Consultant> read(){
         return consultantService.read();
     }
