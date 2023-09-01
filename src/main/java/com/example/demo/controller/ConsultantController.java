@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/Consultant")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class ConsultantController {
 
     private final ConsultantService consultantService;
@@ -31,8 +32,9 @@ public class ConsultantController {
     public Consultant update(@PathVariable Long id,@RequestBody Consultant consultant){
         return consultantService.update(id,consultant);
     }
-@DeleteMapping("/delete")
-public String delete(@PathVariable Long id){
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable Long id){
+
         return consultantService.delete(id);
 }
     }
